@@ -1,0 +1,29 @@
+#Open the text file 
+import re
+scores = open("scores.txt")
+player = []
+
+#Get The data out of the text file.
+for line in scores:
+	
+	split = line.split(",")
+	name =  split[0]
+	name = name.lower()
+	level = int(split[1])
+	score = split[2]
+	score = re.sub("\n", '', score)
+	score = re.sub(" ", '', score)
+	score = int(score)
+	if score > 110:
+		score = 0
+	if score < 0:
+		score = 0
+	player = [name, level, score]
+			
+	
+
+	
+		
+	
+
+
